@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+  crossorigin="anonymous">
+</head>
+<body> 
+   
+     <!-- Navigation bar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+               <a class="navbar-brand" th:href="@{/}">Registration Form</a>
+            </div>
+          </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+     <!-- List of registered users -->
+        <div class="container">
+         <div class="row">
+          <div class= "col-md-6 col-md-offset-3">
+            <table class="table table-striped" border="1" >
+             <thead>
+              <tr>
+                 <th>userName</th>
+                 <th>password</th>
+                 <th>Age</th>
+                 <th>Location</th>
+                 <th>Email</th>
+              </tr>
+              </thead>
+              <tbody>
+               <tr th:each = "User : ${user}">
+                  <td th:text = "${User.username}"></td>
+                  <td th:text = "${User.password}"></td>
+                  <td th:text = "${User.age}"></td>
+                  <td th:text = "${User.location}"></td>
+                  <td th:text = "${User.email}"></td>
+                  
+               </tr>
+              </tbody>
+             </table>
+          </div>
+         </div>
+        </div>
+
+</body>
+</html>
